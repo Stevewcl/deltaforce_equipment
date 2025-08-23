@@ -646,6 +646,8 @@ def refresh_operation():
                     pyautogui.click()
                     time.sleep(0.1)
                     pyautogui.move(0, -20, 0.1)  # 重置鼠标位置
+                time.sleep(0.5)
+                controller.key_press('space') # 关闭活动广告
 
             elif is_color_similar(104, 330, (88, 88, 89)) and is_color_similar(104, 550, (234, 235, 235)):
                 # 识别切换模式界面（此时在全面战场）
@@ -657,6 +659,8 @@ def refresh_operation():
                     pyautogui.click()
                     time.sleep(0.1)
                     pyautogui.move(0, 20, 0.1)  # 重置鼠标位置
+                time.sleep(0.5)
+                controller.key_press('space')  # 关闭活动广告
                 flag = True  # 标记已经执行了从全面战场到烽火地带的切换操作
 
         start_time_single = time.time()
