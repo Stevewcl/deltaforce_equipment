@@ -1,0 +1,9 @@
+mss~=10.0.0
+numpy~=2.2.2
+psutil~=7.0.0
+schedule~=1.2.2
+PyAutoGUI~=0.9.54
+pytesseract~=0.3.13
+keyboard~=0.13.5
+pillow~=11.1.0
+opencv-python~=4.11.0.86
