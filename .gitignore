@@ -5,3 +5,4 @@
 !/screenshots/.gitkeep
 /test.py
 /测试脚本.bat
+/__pycache__/
