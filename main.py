@@ -598,7 +598,7 @@ def refresh_operation():
                 # 识别到"禁止使用市场..."界面提示，按ESC关闭
                 controller.key_press('esc')
 
-            elif is_color_similar(1771, 362, (234, 235, 235)):
+            elif is_color_similar(1236, 185, (129, 134, 137)):
                 # 识别到交易行购买子弹的二级界面，按ESC返回一级界面
                 controller.key_press('esc')
 
@@ -606,7 +606,7 @@ def refresh_operation():
                 # 识别到交易行一级界面，按ESC关闭
                 controller.key_press('esc')
 
-            elif is_color_similar(1459, 1043, (67, 70, 72)):
+            elif is_color_similar(238, 1060, (113, 107, 106)):
                 # 识别到烽火地带开始游戏界面
                 if flag:
                     # 如果之前已执行过切换模式操作，返回交易行
@@ -631,11 +631,11 @@ def refresh_operation():
                     # 否则先离开烽火地带
                     controller.key_press('esc')
 
-            elif is_color_similar(1415, 1053, (82, 86, 88)):
+            elif is_color_similar(1656, 1041, (77, 77, 77)):
                 # 识别到全面战场开始游戏界面，按ESC离开
                 controller.key_press('esc')
 
-            elif is_color_similar(104, 330, (233, 234, 234)) and is_color_similar(104, 550, (99, 100, 99)):
+            elif is_color_similar(104, 330, (233, 234, 234)) and is_color_similar(104, 540, (99, 100, 99)):
                 # 识别切换模式界面（此时在烽火地带）
                 # 通过检查左侧菜单栏的颜色状态来判断当前游戏模式
                 pyautogui.moveTo(250, 380)  # 移动到模式选择菜单
@@ -647,9 +647,9 @@ def refresh_operation():
                     time.sleep(0.1)
                     pyautogui.move(0, -20, 0.1)  # 重置鼠标位置
                 time.sleep(0.5)
-                controller.key_press('space') # 关闭活动广告
+                controller.key_press('space')  # 关闭活动广告
 
-            elif is_color_similar(104, 330, (88, 88, 89)) and is_color_similar(104, 550, (234, 235, 235)):
+            elif is_color_similar(104, 330, (88, 88, 89)) and is_color_similar(104, 540, (234, 235, 235)):
                 # 识别切换模式界面（此时在全面战场）
                 pyautogui.moveTo(250, 380)  # 移动到模式选择菜单
                 # 切换到烽火地带模式
