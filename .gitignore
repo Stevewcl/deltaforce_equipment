@@ -1,3 +1,7 @@
 /config.ini
-/logs/
-/screenshots/
+/logs/*
+!/logs/.gitkeep
+/screenshots/*
+!/screenshots/.gitkeep
+/test.py
+/测试脚本.bat
