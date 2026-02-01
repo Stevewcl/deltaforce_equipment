@@ -743,20 +743,23 @@ def run_for_duration(duration_time):
                 continue
 
             # 定期刷新交易行
+            # print(1)
             refreshed = refresh_operation()
             if refreshed:
                 monitor.clear_pending() # 清空待处理事件，避免消费到上一次循环的残留事件
-
+            # print(2)
             # 取事件（带短超时，便于循环做其它工作）
             try:
                 evt = monitor.get_event(timeout=0.2)
             except queue.Empty:
                 continue
-
+            # print(3)
             # 处理事件
             if evt.kind == 'six_digits':
+                # print(4)
                 price = evt.data
                 if expected_price_1 <= price <= expected_price_2:
+                    # print(5)
                     print(f"识别到价格{price}")
                     # 暂停连点，避免干扰购买操作
                     thread_pause_click = True
@@ -767,10 +770,13 @@ def run_for_duration(duration_time):
                     # take_screenshot(price)
                     time.sleep(0.5)
                     thread_pause_click = False
-
+                else:
+                    print(f"识别到价格{price}，不在范围内")
+                # print(6)
                 controller.key_press('esc')
 
             elif evt.kind in ('no_items', 'seven_sep'):
+                # print(7)
                 # 无货或七位分隔符，直接返回
                 controller.key_press('esc')
 
