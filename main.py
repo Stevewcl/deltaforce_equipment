@@ -147,7 +147,7 @@ class PurchaseStateMonitor:
     并行监测三种状态，任一命中产生事件；随后进入失效态，
     待检测到“三种状态均不命中”连续 N 次后再重武装。
     """
-    def __init__(self, poll_interval: float = 0.03, rearm_clear_consecutive: int = 1):
+    def __init__(self, poll_interval: float = 0, rearm_clear_consecutive: int = 1):
         self.poll_interval = poll_interval
         self.rearm_clear_consecutive = rearm_clear_consecutive
 
@@ -729,7 +729,7 @@ def run_for_duration(duration_time):
     click_thread.start()
 
     # 启动并发状态监测（六位价/暂无/七位分隔符）
-    monitor = PurchaseStateMonitor(poll_interval=0.03, rearm_clear_consecutive=1)
+    monitor = PurchaseStateMonitor(poll_interval=0, rearm_clear_consecutive=1)
     monitor.start()
 
     try:
